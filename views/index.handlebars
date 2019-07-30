@@ -1,0 +1,54 @@
+<div class="img"><img class="logo" src="assets/img/bobs.png" alt="Bob's Burgers"></div>
+
+<h1 class="red-text">ONLINE ORDERING</h1>
+
+<div class="row" >
+  <div class="col s12 m6">
+    <div class="card white z-depth-2" id="menu">
+      <div class="card-content">
+        <!-- Pass in data from server.js -->
+        <h2 class="center-align">BURGER MENU</h2>
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          <li class="center-align">
+            {{this.burger_name}}
+            <button class="change-status btn waves-effect waves-light red" data-id="{{id}}" data-newDevoured="{{devoured}}">EAT ME</button>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <div class="card white z-depth-2" id="eaten" >
+      <div class="card-content">
+        <h2 class="center-align">YOU ATE THESE BURGERS</h2>
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          <li class="center-align">
+            {{this.burger_name}}
+          </li>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" id="add-burger">
+  <div class="col s4 offset-s4">
+    <div class="card grey lighten-4 z-depth-2">
+      <div class="card-content">
+        <h2 class="card-title">PLACE YOUR ORDER</h2>
+          <div class="form-group-create">
+          <label for="new-burger" class="text-label">BURGER NAME:</label>
+          <input type="text" id="new-burger" name="burger_name">
+          <button class="add-da-burger" type="submit">PLACE ORDER</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
