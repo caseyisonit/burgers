@@ -41,12 +41,18 @@ h2{
 }
 #menu, 
 #eaten{
-    height: 250px;
+    height: auto;
+    min-height: 250px;
 }
 
 button {
     margin-left: 10px;
     margin-bottom: 15px;
+}
+
+.add-da-burger {
+    margin-left: 0px !important;
+    margin-top: 15px;
 }
 
 .text-label{
